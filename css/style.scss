@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css?family=Rouge+Script&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Quicksand:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f3ead9;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h3 {
+  font-family: "Rouge Script", cursive;
+  font-weight: bold;
+  color: #581b10;
+  font-size: 40px;
+}
+
+h2 {
+  font-weight: bold;
+  color: #4d0f04;
+}
+
+p {
+  color: #581b10;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+@keyframes transitionBg {
+  from {
+    transform: scale(1, 1.5);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translate(0, -20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes transitionP {
+  from {
+    opacity: 0;
+    transform: translate(0, 20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.hr {
+  width: 100%;
+  height: 10px;
+  border-top: 1px solid #581b10;
+  margin-top: 10px;
+  box-shadow: inset 0 0 4px 1px #581b10;
+}
+
+.wrapper {
+  width: 90%;
+  min-height: 95vh;
+  margin: 0 auto;
+}
+
+.wrapper h1 {
+  margin-top: 30px;
+  padding: 20px 0;
+}
+
+.first h1 {
+  animation: transitionIn 1s;
+}
+
+.first h3 {
+  font-size: 35px;
+  margin-top: 30vh;
+  animation: transitionP 1.2s;
+}
+
+.first p {
+  font-weight: bold;
+  color: #581b10;
+  animation: transitionP 1.5s;
+}
+
+.second {
+  opacity: 0;
+  transform: translate(-40px, 0);
+  transition: 1s;
+}
+
+.second.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.second h3 {
+  font-size: 35px;
+  margin-top: 50px;
+}
+
+.second p.and {
+  margin-top: 50px;
+}
+
+.third {
+  opacity: 0;
+  transform: translate(-40px, 0);
+  transition: 1s;
+}
+
+.third.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.third h3 {
+  font-size: 40px;
+}
+
+.fourth h1 {
+  opacity: 0;
+  transform: translate(0, -20px);
+  transition: 1s;
+}
+
+.fourth h1.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.fifth {
+  opacity: 0;
+  transform: translate(-40px, 0);
+  transition: 1s;
+}
+
+.fifth.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.fifth h1 {
+  margin-top: 35px;
+  padding: 0;
+}
+
+.bg {
+  background-image: url("../img/prewed/001.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -5;
+  animation: transitionBg 0.2s;
+}
+
+.and {
+  margin: -25px 0;
+}
+
+.bg::after {
+  content: "";
+  display: block;
+  background-image: linear-gradient(
+    to top,
+    rgba(243, 234, 217, 0.5),
+    rgba(243, 234, 217, 0.5)
+  );
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.audio-fixed {
+  position: fixed;
+  top: 80%;
+  right: 5px;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+}
+
+.audio-fixed button {
+  width: inherit;
+  height: inherit;
+  border: none;
+}
+
+.audio-fixed button:focus {
+  outline: none;
+}
+
+.rings {
+  width: 35%;
+  color: white;
+}
+
+.icon-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #581b10;
+  z-index: 2;
+}
+
+.icon-bar li {
+  list-style: none;
+}
+
+.icon-bar a {
+  float: left;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 30px;
+  width: 20%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.icon-bar a:hover {
+  background-color: #d99559;
+}
+
+.icon-bar span {
+  display: -ms-grid;
+  display: grid;
+  font-size: 12px;
+  margin-top: -5px;
+}
+
+li.active > a {
+  background-color: #d99559;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.galeri .thumbnail {
+  opacity: 0;
+  transition: 1s;
+}
+
+.galeri .thumbnail.show {
+  opacity: 1;
+}
+
+@media only screen and (min-width: 411px) {
+  h1,
+  h3 {
+    font-family: "Rouge Script", cursive;
+    font-weight: bold;
+    color: #581b10;
+    font-size: 40px;
+  }
+
+  .hr {
+    margin-top: 8px;
+  }
+
+  .fifth p {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  /* Styles */
+
+  .bg {
+    background-image: url("../img/prewed/001.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 102.5vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -5;
+    animation: transitionBg 0.2s;
+  }
+
+  h1,
+  h3 {
+    font-family: "Rouge Script", cursive;
+    font-weight: bold;
+    color: #581b10;
+    font-size: 35px;
+  }
+
+  // .hr {
+  //   margin-top: -1px;
+  // }
+
+  .audio-fixed {
+    top: 75%;
+  }
+
+  .fifth p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  .hr {
+    margin-top: 17px;
+  }
+
+  .fifth p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 500px) {
+  .hr {
+    margin-top: 5px;
+  }
+  .audio-fixed {
+    top: 80%;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .rings {
+    width: 30%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .audio-fixed {
+    top: 80%;
+  }
+
+  .hr {
+    margin-top: 5px;
+  }
+
+  h1,
+  h3 {
+    font-family: "Rouge Script", cursive;
+    font-weight: bold;
+    color: #581b10;
+    font-size: 70px;
+  }
+
+  p,
+  .fifth p {
+    font-size: 20px;
+  }
+
+  .fourth .row {
+    margin-top: 10vh;
+  }
+
+  .second .subtext {
+    margin-top: 10vh;
+  }
+
+  .second h3 {
+    font-size: 50px;
+  }
+
+  .column {
+    flex: 25%;
+    max-width: 30%;
+  }
+
+  .rings {
+    width: 25%;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .hr {
+    margin-top: 5px;
+  }
+
+  .rings {
+    width: 19%;
+  }
+
+  .fourth .row {
+    margin-top: 10vh;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .audio-fixed {
+    top: 80%;
+  }
+  .rings {
+    width: 13%;
+  }
+}
